@@ -1,8 +1,8 @@
-= RTeX: TeX/PDF Generation for Ruby
+= ArTeX: TeX/PDF Generation for Ruby
 
-Project homepage (FAQ, manual, documentation, contact info): http://rtex.rubyforge.org
+Project homepage (FAQ, manual, documentation, contact info): http://github.com/avarteq/artex
 
-Source repository at: http://github.com/bruce/rtex
+Source repository at: http://github.com/avarteq/artex
 
 == Dependencies
 
@@ -11,7 +11,7 @@ Source repository at: http://github.com/bruce/rtex
 
 == Usage
 
-For use as a standalone executable, see `rtex --help'
+For use as a standalone executable, see `artex --help'
 
 For use as a Rails plugin, see README_RAILS.rdoc
 
@@ -24,7 +24,7 @@ http://rtex.rubyforge.org
 
   (The MIT License)
 
-  Copyright (c) 2006-2008 Bruce Williams, Wiebe Cazemier
+  Copyright (c) 2006-2010 Bruce Williams, Wiebe Cazemier, Julian Fischer
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the

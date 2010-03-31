@@ -1,15 +1,15 @@
 require 'rubygems'
 require 'echoe'
 
-require File.dirname(__FILE__) << "/lib/rtex/version"
+require File.dirname(__FILE__) << "/lib/artex/version"
 
 Echoe.new 'artex' do |p|
-  p.version = RTeX::Version::STRING
+  p.version = ArTeX::Version::STRING
   p.author = ['Bruce Williams', 'Wiebe Cazemier', 'Julian Fischer']
   p.email  = 'artex@avarteq.de'
   p.project = 'artex'
   p.summary = "LaTeX preprocessor for PDF generation; Rails plugin"
-  p.url = "http://github.com/avarteq/rtex"
+  p.url = "http://github.com/avarteq/artex"
   p.include_rakefile = true
   p.development_dependencies = %w(Shoulda echoe)
   p.rcov_options = '--exclude gems --exclude version.rb --sort coverage --text-summary --html -o coverage'

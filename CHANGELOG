@@ -23,7 +23,7 @@ v2.0.3
 
 v1.99.0 2008-04-20
 
-  Released RTeX v1.99.0 as a Rubygem, with a standalone executable for PDF generation
+  Released ArTeX v1.99.0 as a Rubygem, with a standalone executable for PDF generation
   and support for plugin installation from the executable.
 
   This release requires Rails >= 2.0.1

@@ -11,7 +11,7 @@ class TempdirTest < Test::Unit::TestCase
     should "change directory" do
       old_location = Dir.pwd
       block_location = nil
-      RTeX::Tempdir.open do
+      ArTeX::Tempdir.open do
         assert_not_equal old_location, Dir.pwd
         block_location = Dir.pwd
       end
@@ -19,15 +19,15 @@ class TempdirTest < Test::Unit::TestCase
       assert !File.exists?(block_location)
     end
   
-    should "use a 'rtex' name prefix" do
-      RTeX::Tempdir.open do
-        assert_equal 'rtex-', File.basename(Dir.pwd)[0,5]
+    should "use a 'artex' name prefix" do
+      ArTeX::Tempdir.open do
+        assert_equal 'artex-', File.basename(Dir.pwd)[0,5]
       end
     end
   
     should "remove the directory after use if no exception occurs by default" do
       path = nil
-      RTeX::Tempdir.open do
+      ArTeX::Tempdir.open do
         path = Dir.pwd
         assert File.exists?(path)
       end
@@ -35,7 +35,7 @@ class TempdirTest < Test::Unit::TestCase
     end
   
     should "return the result of the last statement if automatically removing the directory" do
-      result = RTeX::Tempdir.open do
+      result = ArTeX::Tempdir.open do
         :last
       end
       assert_equal :last, :last
@@ -43,7 +43,7 @@ class TempdirTest < Test::Unit::TestCase
   
     should "return the result of the last statment if not automatically removing the directory" do
       tempdir = nil # to capture value
-      result = RTeX::Tempdir.open do |tempdir|
+      result = ArTeX::Tempdir.open do |tempdir|
         :last
       end
       tempdir.remove!
@@ -53,7 +53,7 @@ class TempdirTest < Test::Unit::TestCase
     should "not remove the directory after use if an exception occurs" do
       path = nil
       assert_raises RuntimeError do
-        RTeX::Tempdir.open do
+        ArTeX::Tempdir.open do
           path = Dir.pwd
           assert File.directory?(path)
           raise "Test exception!"

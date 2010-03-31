@@ -1,14 +1,14 @@
-$:.unshift(File.dirname(__FILE__) << '/rtex')
+$:.unshift(File.dirname(__FILE__) << '/artex')
 
 require 'document'
 require 'version'
 
-module RTeX
+module ArTeX
   
-  # Load code to initialize RTeX for framework 
+  # Load code to initialize ArTeX for framework 
   def self.framework(name)
-    require File.dirname(__FILE__) << "/rtex/framework/#{name}"
-    framework = ::RTeX::Framework.const_get(name.to_s.capitalize)
+    require File.dirname(__FILE__) << "/artex/framework/#{name}"
+    framework = ::ArTeX::Framework.const_get(name.to_s.capitalize)
     framework.setup
   end
   

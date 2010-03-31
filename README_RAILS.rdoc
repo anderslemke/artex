@@ -1,4 +1,4 @@
-= RTeX for Rails
+= ArTeX for Rails
 
 == Installation
 

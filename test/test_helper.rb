@@ -8,7 +8,7 @@ rescue LoadError
   abort "the `Shoulda' and `flexmock' gems are required for testing"
 end
 
-require File.dirname(__FILE__) << '/../lib/rtex'
+require File.dirname(__FILE__) << '/../lib/artex'
 
 class Test::Unit::TestCase
   
@@ -19,8 +19,7 @@ class Test::Unit::TestCase
   def document(name, options={})
     name = name.kind_of?(Symbol) ? "#{name}.tex.erb" : name
     template = File.read(File.dirname(__FILE__) << "/fixtures/#{name}")
-    RTeX::Document.new(template, options)
+    ArTeX::Document.new(template, options)
   end
-
 end
   

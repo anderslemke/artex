@@ -5,7 +5,7 @@ require 'tmpdir'
 require 'escaping'
 require 'tempdir'
 
-module RTeX
+module ArTeX
   
   class Document
     
@@ -51,7 +51,7 @@ module RTeX
     # Process through defined filter
     def filter(text) #:nodoc:
       return text unless @options[:filter]
-      if (process = RTeX.filters[@options[:filter]])
+      if (process = ArTeX.filters[@options[:filter]])
         process[text]
       else
         raise FilterError, "No `#{@options[:filter]}' filter"

@@ -21,10 +21,10 @@ class DocumentTest < Test::Unit::TestCase
         @escaped = '\textbackslash{}\textasciitilde{}'
       end
       should "escape character" do
-        assert_equal @escaped, RTeX::Document.escape(@obj.to_s)
+        assert_equal @escaped, ArTeX::Document.escape(@obj.to_s)
       end
       should "convert argument to string before attempting escape" do        
-        assert_equal @escaped, RTeX::Document.escape(@obj)
+        assert_equal @escaped, ArTeX::Document.escape(@obj)
       end
     end
     

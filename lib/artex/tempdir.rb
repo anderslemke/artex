@@ -1,10 +1,10 @@
 require 'fileutils'
 
-module RTeX
+module ArTeX
   
   class Tempdir #:nodoc:
         
-    def self.open(parent_path=RTeX::Document.options[:tempdir])
+    def self.open(parent_path=ArTeX::Document.options[:tempdir])
       tempdir = new(parent_path)
       FileUtils.mkdir_p tempdir.path
       result = Dir.chdir(tempdir.path) do
@@ -16,14 +16,14 @@ module RTeX
       result
     end
     
-    def initialize(parent_path, basename='rtex')
+    def initialize(parent_path, basename='artex')
       @parent_path = parent_path
       @basename = basename
       @removed = false
     end
     
     def path
-      @path ||= File.expand_path(File.join(@parent_path, 'rtex', "#{@basename}-#{uuid}"))
+      @path ||= File.expand_path(File.join(@parent_path, 'artex', "#{@basename}-#{uuid}"))
     end
     
     def remove!

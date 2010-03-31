@@ -1,12 +1,12 @@
 try_require 'uv'
 require 'hpricot'
-require File.dirname(__FILE__) << "/../../lib/rtex/version"
+require File.dirname(__FILE__) << "/../../lib/artex/version"
 
 def stable_version
-  if defined?(RTeX::Version::DESCRIPTION)
-    RTeX::Version::STRING + " (#{RTeX::Version::DESCRIPTION})"
+  if defined?(ArTeX::Version::DESCRIPTION)
+    ArTeX::Version::STRING + " (#{ArTeX::Version::DESCRIPTION})"
   else
-    RTeX::Version::STRING
+    ArTeX::Version::STRING
   end
 end
 

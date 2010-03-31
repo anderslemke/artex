@@ -1,4 +1,4 @@
-module RTeX
+module ArTeX
   
   module Escaping
     
