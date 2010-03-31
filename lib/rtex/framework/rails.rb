@@ -6,13 +6,13 @@ module RTeX
       
       def self.setup
         RTeX::Document.options[:tempdir] = File.expand_path(File.join(RAILS_ROOT, 'tmp'))
-        if ActionView::Base.respond_to?(:register_template_handler)
-          ActionView::Base.register_template_handler(:rtex, TemplateHandler)
-        else
-          ActionView::Template.register_template_handler(:rtex, TemplateHandler)
-        end
-        ActionController::Base.send(:include, ControllerMethods)
-        ActionView::Base.send(:include, HelperMethods)
+        #if ActionView::Base.respond_to?(:register_template_handler)
+        #  ActionView::Base.register_template_handler(:rtex, TemplateHandler)
+        #else
+        #  ActionView::Template.register_template_handler(:rtex, TemplateHandler)
+        #end
+        #ActionController::Base.send(:include, ControllerMethods)
+        #ActionView::Base.send(:include, HelperMethods)
       end
       
       class TemplateHandler < ::ActionView::TemplateHandlers::ERB

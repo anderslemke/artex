@@ -3,13 +3,13 @@ require 'echoe'
 
 require File.dirname(__FILE__) << "/lib/rtex/version"
 
-Echoe.new 'rtex' do |p|
+Echoe.new 'artex' do |p|
   p.version = RTeX::Version::STRING
-  p.author = ['Bruce Williams', 'Wiebe Cazemier']
-  p.email  = 'bruce@codefluency.com'
-  p.project = 'rtex'
+  p.author = ['Bruce Williams', 'Wiebe Cazemier', 'Julian Fischer']
+  p.email  = 'artex@avarteq.de'
+  p.project = 'artex'
   p.summary = "LaTeX preprocessor for PDF generation; Rails plugin"
-  p.url = "http://rtex.rubyforge.org"
+  p.url = "http://github.com/avarteq/rtex"
   p.include_rakefile = true
   p.development_dependencies = %w(Shoulda echoe)
   p.rcov_options = '--exclude gems --exclude version.rb --sort coverage --text-summary --html -o coverage'
