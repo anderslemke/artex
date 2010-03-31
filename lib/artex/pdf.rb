@@ -1,3 +1,4 @@
+#TODO Translate comments.
 module ArTeX
   class PDF  
     
@@ -31,6 +32,8 @@ module ArTeX
 
     def render_collection(collection, binding, template_name)
       content = ""
+      
+      #TODO refactor
       collection.each do |billing_position|      
           @billing_position = billing_position
           latex = render_to_latex(binding, template_name)        
