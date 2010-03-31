@@ -14,7 +14,7 @@ This gem has been forked from the rtex gem (http://github.com/bruce/rtex).
 RTeX can be used either as stand alone executable or as a rails plugin.
 Using it as rails plugin means to create PDF files using the rails rendering engine.
 This will bring you in trouble if you don't want to generate your PDF files within controllers.
-In contrast to that ArTeX has no dependencies on ActionPack and thus can be used in models as well.
+In contrast to that ArTeX has no dependencies on ActionPack and thus can also be used in models.
 
 == License
 
