@@ -11,6 +11,7 @@ lib/artex/document.rb
 lib/artex/escaping.rb
 lib/artex/framework/merb.rb
 lib/artex/framework/rails.rb
+lib/artex/pdf.rb
 lib/artex/tempdir.rb
 lib/artex/version.rb
 rails/init.rb
