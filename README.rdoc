@@ -7,18 +7,14 @@ Source repository at: http://github.com/avarteq/artex
 == Dependencies
 
 * pdflatex executable, available in modern teTeX distributions
-* Requires Rails >= 2.0.1 if used as a plugin.
+* Requires Ruby
 
-== Usage
-
-For use as a standalone executable, see `artex --help'
-
-For use as a Rails plugin, see README_RAILS.rdoc
-
-== More Information
-
-Additional help may be available at the project homepage,
-http://rtex.rubyforge.org
+== Motivation
+This gem has been forked from the rtex gem (http://github.com/bruce/rtex).
+RTeX can be used either as stand alone executable or as a rails plugin.
+Using it as rails plugin means to create PDF files using the rails rendering engine.
+This will bring you in trouble if you don't want to generate your PDF files within controllers.
+In contrast to that ArTeX has no dependencies on ActionPack and thus can be used in models as well.
 
 == License
 
