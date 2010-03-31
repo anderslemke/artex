@@ -19,6 +19,7 @@ In contrast to that ArTeX has no dependencies on ActionPack and thus can also be
 We'll keep on updating the gem and we'll try to provide some examples in the future.
 Besides of that the code will be iteratively cut down, rewritten and enhanced.
 
+
 == License
 
   (The MIT License)
