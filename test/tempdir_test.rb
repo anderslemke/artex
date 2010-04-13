@@ -21,7 +21,7 @@ class TempdirTest < Test::Unit::TestCase
   
     should "use a 'artex' name prefix" do
       ArTeX::Tempdir.open do
-        assert_equal 'artex-', File.basename(Dir.pwd)[0,5]
+        assert_equal 'artex', File.basename(Dir.pwd)[0,5]
       end
     end
   
