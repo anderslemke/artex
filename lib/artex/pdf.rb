@@ -18,6 +18,8 @@ module ArTeX
       # z.B. 'bills/form/billing_position/_billing_position.pdf.rtex'
       template_name = get_template_name_from_partial_name(options[:partial])
 
+      handle_locals(options)
+
       if is_collection?(options) then
         content = render_collection(options[:collection], binding, template_name)
       else
@@ -50,6 +52,16 @@ module ArTeX
       parts[-1] = "_" + parts.last
       template_name = parts.join("/")
       template_name
+    end
+
+    # creates the posibility of locals renderign
+    def handle_locals(options = {})
+      return unless options[:locals]
+      options[:locals].each do |name, value|
+        l = lambda { return value }
+        self.class.send(:define_method, name.to_sym, l )
+
+      end
     end
 
     def render_to_latex(binding, path)

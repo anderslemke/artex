@@ -46,7 +46,7 @@ class DocumentTest < Test::Unit::TestCase
       @author = 'Foo'
       assert_equal '%PDF', document(:first).to_pdf(binding)[0, 4]
     end
-  
+    
     should "generate TeX source and return as a string with debug option" do
       @author = 'Foo'
       assert_not_equal '%PDF', document(:first, :tex => true).to_pdf(binding)[0, 4]    

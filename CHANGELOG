@@ -1,3 +1,6 @@
 v2.1.0
 
  Forked from RTeX 2.1.0.
+
+v 2.1.2
+ Make Locals posible for Partials-rendering

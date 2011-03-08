@@ -5,7 +5,7 @@ require File.dirname(__FILE__) << "/lib/artex/version"
 
 Echoe.new 'artex' do |p|
   p.version = ArTeX::Version::STRING
-  p.author = ['Bruce Williams', 'Wiebe Cazemier', 'Julian Fischer']
+  p.author = ['Bruce Williams', 'Wiebe Cazemier', 'Julian Fischer', 'Matthias Folz']
   p.email  = 'artex@avarteq.de'
   p.project = 'artex'
   p.summary = "LaTeX preprocessor for PDF generation; Rails plugin"
