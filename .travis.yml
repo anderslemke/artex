@@ -7,4 +7,5 @@ before_script:
 
 notifications:
   email:
+    - folz@avarteq.de
     - rgogolok@avarteq.de
