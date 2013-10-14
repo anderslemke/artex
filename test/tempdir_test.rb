@@ -42,11 +42,12 @@ class TempdirTest < Test::Unit::TestCase
     end
   
     should "return the result of the last statment if not automatically removing the directory" do
-      tempdir = nil # to capture value
+      content = nil # to capture value
       result = ArTeX::Tempdir.open do |tempdir|
+        content = tempdir
         :last
       end
-      tempdir.remove!
+      content.remove!
       assert_equal :last, :last
     end
   
