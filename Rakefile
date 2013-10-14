@@ -11,7 +11,7 @@ Echoe.new 'artex' do |p|
   p.summary = "LaTeX preprocessor for PDF generation; Rails plugin"
   p.url = "http://github.com/avarteq/artex"
   p.include_rakefile = true
-  p.development_dependencies = %w(Shoulda echoe)
+  p.development_dependencies = %w(shoulda echoe)
   p.rcov_options = '--exclude gems --exclude version.rb --sort coverage --text-summary --html -o coverage'
   p.ignore_pattern = /^(pkg|doc|site)|\.svn|CVS|\.bzr|\.DS|\.git/
   p.rubygems_version = nil
