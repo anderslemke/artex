@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.date = "2013-10-15"
   s.description = "LaTeX preprocessor for PDF generation; Rails plugin"
   s.email = "artex@avarteq.de"
-  s.extra_rdoc_files = ["CHANGELOG", "README.rdoc", "lib/artex.rb", "lib/artex/document.rb", "lib/artex/escaping.rb", "lib/artex/framework/merb.rb", "lib/artex/framework/rails.rb", "lib/artex/pdf.rb", "lib/artex/tempdir.rb", "lib/artex/version.rb"]
-  s.files = ["CHANGELOG", "Gemfile", "Manifest", "README.rdoc", "Rakefile", "init.rb", "lib/artex.rb", "lib/artex/document.rb", "lib/artex/escaping.rb", "lib/artex/framework/merb.rb", "lib/artex/framework/rails.rb", "lib/artex/pdf.rb", "lib/artex/tempdir.rb", "lib/artex/version.rb", "rails/init.rb", "test/document_test.rb", "test/filter_test.rb", "test/fixtures/first.tex", "test/fixtures/first.tex.erb", "test/fixtures/fragment.tex.erb", "test/fixtures/text.textile", "test/pdf_test.rb", "test/tempdir_test.rb", "test/test_helper.rb", "vendor/instiki/LICENSE", "vendor/instiki/redcloth_for_tex.rb", "artex.gemspec"]
+  s.extra_rdoc_files = ["CHANGELOG", "LICENSE", "README.rdoc", "lib/artex.rb", "lib/artex/document.rb", "lib/artex/escaping.rb", "lib/artex/framework/merb.rb", "lib/artex/framework/rails.rb", "lib/artex/pdf.rb", "lib/artex/tempdir.rb", "lib/artex/version.rb"]
+  s.files = ["CHANGELOG", "Gemfile", "LICENSE", "Manifest", "README.rdoc", "Rakefile", "init.rb", "lib/artex.rb", "lib/artex/document.rb", "lib/artex/escaping.rb", "lib/artex/framework/merb.rb", "lib/artex/framework/rails.rb", "lib/artex/pdf.rb", "lib/artex/tempdir.rb", "lib/artex/version.rb", "rails/init.rb", "test/document_test.rb", "test/filter_test.rb", "test/fixtures/first.tex", "test/fixtures/first.tex.erb", "test/fixtures/fragment.tex.erb", "test/fixtures/text.textile", "test/pdf_test.rb", "test/tempdir_test.rb", "test/test_helper.rb", "vendor/instiki/LICENSE", "vendor/instiki/redcloth_for_tex.rb", "artex.gemspec"]
   s.homepage = "http://github.com/avarteqgmbh/artex"
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Artex", "--main", "README.rdoc"]
   s.require_paths = ["lib"]
