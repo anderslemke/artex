@@ -1,4 +1,5 @@
 CHANGELOG
+Gemfile
 Manifest
 README.rdoc
 Rakefile
@@ -19,6 +20,7 @@ test/fixtures/first.tex
 test/fixtures/first.tex.erb
 test/fixtures/fragment.tex.erb
 test/fixtures/text.textile
+test/pdf_test.rb
 test/tempdir_test.rb
 test/test_helper.rb
 vendor/instiki/LICENSE

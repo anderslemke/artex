@@ -2,7 +2,7 @@
 
 Project homepage (FAQ, manual, documentation, contact info): http://github.com/avarteq/artex
 
-Source repository at: http://github.com/avarteq/artex
+Source repository at: http://github.com/avarteqgmbh/artex
 
 == Dependencies
 
