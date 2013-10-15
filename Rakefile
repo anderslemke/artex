@@ -10,6 +10,7 @@ Echoe.new 'artex' do |p|
   p.project = 'artex'
   p.summary = "LaTeX preprocessor for PDF generation; Rails plugin"
   p.url = "http://github.com/avarteqgmbh/artex"
+  p.licenses = ["MIT"]
   p.include_rakefile = true
   p.development_dependencies = %w(echoe flexmock)
   p.development_dependencies << "rails ~>3.2.14"
