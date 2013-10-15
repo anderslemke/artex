@@ -16,6 +16,7 @@ Echoe.new 'artex' do |p|
   p.development_dependencies << "shoulda ~>2.11.3"
   p.rcov_options = '--exclude gems --exclude version.rb --sort coverage --text-summary --html -o coverage'
   p.ignore_pattern = /^(pkg|doc|site)|\.svn|CVS|\.bzr|\.DS|\.git/
+  p.retain_gemspec = true
   p.rubygems_version = nil
 end
 
