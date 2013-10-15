@@ -1,3 +1,5 @@
+{<img src="https://travis-ci.org/avarteqgmbh/artex.png?branch=master" alt="Build Status" />}[https://travis-ci.org/avarteqgmbh/artex]
+
 = ArTeX: TeX/PDF Generation for Ruby
 
 Project homepage (FAQ, manual, documentation, contact info): http://github.com/avarteq/artex
