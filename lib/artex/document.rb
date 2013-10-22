@@ -43,7 +43,7 @@ module ArTeX
     
     # Get the source for the entire 
     def source(binding=nil) #:nodoc:
-      @source ||= wrap_in_layout do
+      @source ||= wrap_in_layout(binding) do
         filter @erb.result(binding)
       end
     end
@@ -59,7 +59,7 @@ module ArTeX
     end
     
     # Wrap content in optional layout
-    def wrap_in_layout #:nodoc:
+    def wrap_in_layout(binding=nil) #:nodoc:
       if @options[:layout]
         ERB.new(@options[:layout]).result(binding)
       else
