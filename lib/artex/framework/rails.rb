@@ -1,14 +1,14 @@
 require 'tempfile'
 
 module ArTeX
-  module Framework #:nodoc:   
+  module Framework #:nodoc:
     module Rails #:nodoc:
-      
+
       def self.setup
         ArTeX::Document.options[:tempdir] = File.expand_path(File.join(RAILS_ROOT, 'tmp'))
         ActionView::Template.register_template_handler(:rtex, TemplateHandler)
       end
-            
+
       module HelperMethods
         # Similar to h()
         def latex_escape(*args)
