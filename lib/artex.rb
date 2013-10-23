@@ -1,8 +1,8 @@
-$:.unshift(File.dirname(__FILE__) << '/artex')
+$:.unshift(File.dirname(__FILE__))
 
-require 'document'
-require 'version'
-require 'pdf'
+require 'artex/document'
+require 'artex/version'
+require 'artex/pdf'
 
 module ArTeX
   
@@ -28,4 +28,4 @@ module ArTeX
   
 end
 
-
+require 'artex/railtie' if defined?(Rails)

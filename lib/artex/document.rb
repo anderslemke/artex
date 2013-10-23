@@ -2,8 +2,8 @@ require 'erb'
 require 'ostruct'
 require 'tmpdir'
 
-require 'escaping'
-require 'tempdir'
+require 'artex/escaping'
+require 'artex/tempdir'
 
 module ArTeX
   
