@@ -11,6 +11,13 @@ Source repository at: http://github.com/avarteqgmbh/artex
 * pdflatex executable, available in modern teTeX distributions
 * Requires Ruby
 
+== Rendering from Rails
+
+For each action you want to render pdf from, add a file, for example
+`app/views/products/show.pdf.rtex`. Additionally, you need a layout with the
+same extensions, which should contain the whole LaTeX preamble and yield within
+the {document}.
+
 == Motivation
 This gem has been forked from the rtex gem (http://github.com/bruce/rtex).
 RTeX can be used either as stand alone executable or as a rails plugin.
