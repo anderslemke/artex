@@ -5,11 +5,11 @@ require File.dirname(__FILE__) << "/lib/artex/version"
 
 Echoe.new 'artex' do |p|
   p.version = ArTeX::Version::STRING
-  p.author = ['Bruce Williams', 'Wiebe Cazemier', 'Julian Fischer', 'Matthias Folz', 'Robert Gogolok']
+  p.author = ['Eric Faerber', 'Bruce Williams', 'Wiebe Cazemier', 'Julian Fischer', 'Matthias Folz', 'Robert Gogolok']
   p.email  = 'artex@avarteq.de'
   p.project = 'artex'
   p.summary = "LaTeX preprocessor for PDF generation; Rails plugin"
-  p.url = "http://github.com/avarteqgmbh/artex"
+  p.url = "http://github.com/wgeric/artex"
   p.include_rakefile = true
   p.development_dependencies = %w(echoe flexmock)
   p.development_dependencies << "rails ~>3.2.14"
