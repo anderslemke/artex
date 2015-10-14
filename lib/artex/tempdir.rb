@@ -7,13 +7,13 @@ module ArTeX
     def self.open(parent_path=ArTeX::Document.options[:tempdir])
       tempdir = new(parent_path)
       FileUtils.mkdir_p tempdir.path
-      result = Dir.chdir(tempdir.path) do
+     # result = Dir.chdir(tempdir.path) do
         yield tempdir
-      end
+     # end
       # We don't remove the temporary directory when exceptions occur,
       # so that the source of the exception can be dubbed (logfile kept)
       tempdir.remove!
-      result
+     # result
     end
 
     def initialize(parent_path, basename='artex')
