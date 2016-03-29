@@ -3,17 +3,22 @@ directory would not change within one ruby process. This doesn't work well in a 
 environment like SideKiq. Now absolute paths are used instead of assuming the current working
 directory is for one PDF generation.
 
-{<img src="https://travis-ci.org/avarteqgmbh/artex.png?branch=master" alt="Build Status" />}[https://travis-ci.org/avarteqgmbh/artex]
+{<img src="https://travis-ci.org/korobkov/artex.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/korobkov/artex]
+{<img src="https://codeclimate.com/github/korobkov/artex/badges/gpa.svg" />}[https://codeclimate.com/github/korobkov/artex]
+{<img src="https://codeclimate.com/github/korobkov/artex/badges/coverage.svg" />}[https://codeclimate.com/github/korobkov/artex/coverage]
+{<img src="https://gemnasium.com/korobkov/artex.svg" alt="Dependency Status" />}[https://gemnasium.com/korobkov/artex]
+{<img src="https://inch-ci.org/github/korobkov/artex.svg?branch=master" alt="Inline docs" />}[https://inch-ci.org/github/korobkov/artex]
+{<img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT" />}[https://opensource.org/licenses/MIT]
 
 = ArTeX: TeX/PDF Generation for Ruby
 
 Project homepage (FAQ, manual, documentation, contact info): http://github.com/avarteqgmbh/artex
 
-Source repository at: http://github.com/avarteqgmbh/artex
+Source repository at: http://gitlab.com/korobkov/artex
 
 == Dependencies
 
-* pdflatex executable, available in modern teTeX distributions
+* pdflatex executable, available in modern TeXLive distributions
 * Requires Ruby
 
 == Rendering from Rails
