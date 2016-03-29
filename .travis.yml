@@ -5,8 +5,3 @@ rvm:
 before_script:
   - sudo apt-get install uuid-runtime
   - sudo apt-get install texlive-latex-base
-
-notifications:
-  email:
-    - folz@avarteq.de
-    - rgogolok@avarteq.de
