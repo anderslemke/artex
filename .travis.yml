@@ -5,3 +5,6 @@ rvm:
 before_script:
   - sudo apt-get install uuid-runtime
   - sudo apt-get install texlive-latex-base
+
+script:
+  - bin/rake

@@ -110,6 +110,7 @@ DEPENDENCIES
   flexmock
   minitest-reporters
   rails (~> 3.2.14)
+  rake
 
 BUNDLED WITH
    1.11.2

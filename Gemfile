@@ -6,3 +6,5 @@ gemspec
 gem 'flexmock', group: :test, require: false
 # Create customizable MiniTest output formats
 gem 'minitest-reporters', group: :test, require: false
+# A make-like build utility for Ruby
+gem 'rake', require: false

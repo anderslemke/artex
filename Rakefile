@@ -28,3 +28,5 @@ end
 task :coverage do
   system "open coverage/index.html" if PLATFORM['darwin']
 end
+
+task default: :test
