@@ -1,11 +1,11 @@
 require File.dirname(__FILE__) << '/test_helper'
 
 
-class PdfTest < Test::Unit::TestCase
+class PdfTest < Minitest::Test
 
-  context "Creating a temporary directory" do
-  
-    setup do
+  describe "Creating a temporary directory" do
+
+    before do
       @options = {
         :locals => {
         :number => 234,
@@ -15,8 +15,8 @@ class PdfTest < Test::Unit::TestCase
       }
       }
     end
- 
-    should "define locals" do
+
+    it "defines locals" do
       pdf = ArTeX::PDF.new
       pdf.handle_locals(@options)
 
@@ -27,5 +27,5 @@ class PdfTest < Test::Unit::TestCase
     end
 
   end
-  
+
 end

@@ -1,10 +1,10 @@
 require File.dirname(__FILE__) << '/test_helper'
 
-class TempdirTest < Test::Unit::TestCase
+class TempdirTest < Minitest::Test
 
-  context "Creating a temporary directory" do
+  describe "Creating a temporary directory" do
 
-    setup do
+    before do
       change_tmpdir_for_testing
     end
 
@@ -19,29 +19,29 @@ class TempdirTest < Test::Unit::TestCase
   #    assert !File.exists?(block_location)
   #  end
 
-    should "use a 'artex' name prefix" do
+    it "uses a 'artex' name prefix" do
       ArTeX::Tempdir.open do |tempdir|
         assert_equal 'artex', File.basename(tempdir.path)[0,5]
       end
     end
 
-    should "remove the directory after use if no exception occurs by default" do
+    it "removes the directory after use if no exception occurs by default" do
       path = nil
       ArTeX::Tempdir.open do |tempdir|
         path = tempdir.path
-        assert File.exists?(path)
+        assert File.exist?(path)
       end
-      assert !File.exists?(path)
+      assert !File.exist?(path)
     end
 
-    should "return the result of the last statement if automatically removing the directory" do
+    it "returns the result of the last statement if automatically removing the directory" do
       result = ArTeX::Tempdir.open do
         :last
       end
       assert_equal :last, :last
     end
 
-    should "return the result of the last statment if not automatically removing the directory" do
+    it "returns the result of the last statement if not automatically removing the directory" do
       content = nil # to capture value
       result = ArTeX::Tempdir.open do |tempdir|
         content = tempdir
@@ -51,7 +51,7 @@ class TempdirTest < Test::Unit::TestCase
       assert_equal :last, :last
     end
 
-    should "not remove the directory after use if an exception occurs" do
+    it "does not remove the directory after use if an exception occurs" do
       path = nil
       assert_raises RuntimeError do
         ArTeX::Tempdir.open do

@@ -1,17 +1,16 @@
-require 'test/unit'
+ENV['RAILS_ENV'] ||= 'test'
 
-require 'rubygems'
-begin
-  require 'shoulda'
-  require 'flexmock/test_unit'
-rescue LoadError
-  abort "the `Shoulda' and `flexmock' gems are required for testing"
-end
+require 'flexmock/minitest'
+require 'minitest/autorun'
+
+require 'minitest/reporters'
+Minitest::Reporters.use!
+
 
 require File.dirname(__FILE__) << '/../lib/artex'
 
-class Test::Unit::TestCase
-  
+class Minitest::Test
+
   def change_tmpdir_for_testing
     flexmock(Dir).should_receive(:tmpdir).and_return(File.dirname(__FILE__) << '/tmp')
   end
@@ -22,4 +21,3 @@ class Test::Unit::TestCase
     ArTeX::Document.new(template, options)
   end
 end
-  

@@ -54,7 +54,7 @@ module ArTeX
       if (process = ArTeX.filters[@options[:filter]])
         process[text]
       else
-        raise FilterError, "No `#{@options[:filter]}' filter"
+        raise FilterError, "No '#{@options[:filter]}' filter"
       end
     end
 
@@ -153,7 +153,7 @@ module ArTeX
     end
 
     def verify!(directory)
-      unless File.exists?(File.join(directory, result_file))
+      unless File.exist?(File.join(directory, result_file))
         raise GenerationError, "Could not find result PDF #{result_file} after generation.\nCheck #{File.expand_path(log_file)}"
       end
     end
