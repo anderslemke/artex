@@ -14,3 +14,5 @@ gem 'flexmock', group: :test, require: false
 gem 'minitest-reporters', group: :test, require: false
 # A make-like build utility for Ruby
 gem 'rake', require: false
+# A Ruby static code analyzer. Aims to enforce the community-driven Ruby Style Guide
+gem 'rubocop', group: [:development, :test], require: false

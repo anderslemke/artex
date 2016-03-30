@@ -20,11 +20,11 @@ module ArTeX
 
       handle_locals(options)
 
-      if is_collection?(options) then
-        content = render_collection(options[:collection], binding, template_name)
-      else
-        content = render_to_latex(binding, template_name)
-      end
+      content = if is_collection?(options) then
+        render_collection(options[:collection], binding, template_name)
+                else
+        render_to_latex(binding, template_name)
+                end
       return content
     end
 
