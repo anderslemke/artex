@@ -6,6 +6,9 @@ require 'minitest/autorun'
 require 'minitest/reporters'
 Minitest::Reporters.use!
 
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 
 require File.dirname(__FILE__) << '/../lib/artex'
 
