@@ -18,7 +18,7 @@ Source repository at: http://gitlab.com/korobkov/artex
 
 == Dependencies
 
-* pdflatex executable, available in modern TeXLive distributions
+* xelatex executable, available in modern LaTeX distributions, like TeXLive
 * Requires Ruby
 
 == Rendering from Rails

@@ -155,7 +155,7 @@ class RedClothForTex < String
   def self.available?
     if not defined? @@available 
       begin 
-        @@available = system "pdflatex -version"
+        @@available = system "xelatex -version"
       rescue Errno::ENOENT
         @@available = false
       end

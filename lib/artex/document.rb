@@ -17,14 +17,14 @@ module ArTeX
 
     # Default options
     # [+:preprocess+] Are we preprocessing? Default is +false+
-    # [+:preprocessor+] Executable to use during preprocessing (generating TOCs, etc). Default is +latex+
+    # [+:preprocessor+] Executable to use during preprocessing (generating TOCs, etc). Default is +xelatex+
     # [+:shell_redirect+] Option redirection for shell output (eg, +"> /dev/null 2>&1"+ ). Default is +nil+.
     # [+:tmpdir+] Location of temporary directory (default: +Dir.tmpdir+)
     def self.options
       @options ||= {
-        :preprocessor => 'latex',
+        :preprocessor => 'xelatex',
         :preprocess => false,
-        :processor => 'pdflatex',
+        :processor => 'xelatex',
         #
         :shell_redirect => nil,
         # Temporary Directory
