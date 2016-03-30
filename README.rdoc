@@ -1,6 +1,6 @@
 **Updated:** The original implementation was not thread safe. The expectation was that the working
-directory would not change within one ruby process. This doesn't work well in a multi-threaded
-environment like SideKiq. Now absolute paths are used instead of assuming the current working
+directory would not change within one ruby process. This doesn't work well in multi-threaded
+environments. Now absolute paths are used instead of assuming the current working
 directory is for one PDF generation.
 
 {<img src="https://travis-ci.org/korobkov/artex.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/korobkov/artex]
