@@ -9,6 +9,7 @@ directory is for one PDF generation.
 {<img src="https://gemnasium.com/korobkov/artex.svg" alt="Dependency Status" />}[https://gemnasium.com/korobkov/artex]
 {<img src="https://inch-ci.org/github/korobkov/artex.svg?branch=master" alt="Inline docs" />}[https://inch-ci.org/github/korobkov/artex]
 {<img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT" />}[https://opensource.org/licenses/MIT]
+{<img src="https://img.shields.io/badge/workflow-global%20rebase-blue.svg" alt="Workflow: global rebase" />}[https://git-scm.com/book/en/v2/Git-Branching-Rebasing#Rebase-vs.-Merge]
 
 = ArTeX: TeX/PDF Generation for Ruby
 
