@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "2.0.14"
   s.summary = "LaTeX preprocessor for PDF generation; Rails plugin"
   s.test_files = ["test/tempdir_test.rb", "test/test_helper.rb", "test/filter_test.rb", "test/document_test.rb", "test/pdf_test.rb"]
+  s.license = 'MIT'
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
