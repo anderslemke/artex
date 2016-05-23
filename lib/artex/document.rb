@@ -159,11 +159,11 @@ module ArTeX
     end
 
     def prepare(directory, input)
-      File.open(File.join(directory, source_file), 'wb') { |f| f.puts input }
+      File.open(File.join(directory, source_file), 'wb:UTF-8') { |f| f.puts input }
     end
 
     def result_as_string(directory)
-      File.open(File.join(directory, result_file), 'rb') { |f| f.read }
+      File.open(File.join(directory, result_file), 'rb:UTF-8') { |f| f.read }
     end
 
     def full_path_in(directory)
