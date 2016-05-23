@@ -54,7 +54,7 @@ class DocumentTest < Minitest::Test
       @author = 'Foo'
       data_read = nil
       invocation_result = document(:first).to_pdf(binding) do |filename|
-        data_read = File.open(filename, 'rb:UTF-8') { |f| f.read }
+        data_read = File.open(filename, 'rb:UTF-8', &:read)
         return :not_the_file_contents
       end
       assert_equal '%PDF', data_read[0, 4]
@@ -65,7 +65,7 @@ class DocumentTest < Minitest::Test
       @author = 'Foo'
       data_read = nil
       invocation_result = document(:first, :tex => true).to_pdf(binding) do |filename|
-        data_read = File.open(filename, 'rb:UTF-8') { |f| f.read }
+        data_read = File.open(filename, 'rb:UTF-8', &:read)
         return :not_the_file_contents
       end
       refute_equal '%PDF', data_read[0, 4]

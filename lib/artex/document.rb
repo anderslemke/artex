@@ -163,7 +163,7 @@ module ArTeX
     end
 
     def result_as_string(directory)
-      File.open(File.join(directory, result_file), 'rb:UTF-8') { |f| f.read }
+      File.open(File.join(directory, result_file), 'rb:UTF-8', &:read)
     end
 
     def full_path_in(directory)
