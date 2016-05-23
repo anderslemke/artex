@@ -47,7 +47,7 @@ class DocumentTest < Minitest::Test
 
     it 'generates TeX source and returns it as a string with debug option' do
       @author = 'Foo'
-      refute_equal '%PDF', document(:first, :tex => true).to_pdf(binding)[0, 4]
+      refute_equal '%PDF', document(:first, tex: true).to_pdf(binding)[0, 4]
     end
 
     it 'generates PDF and gives access to file directly' do
@@ -64,7 +64,7 @@ class DocumentTest < Minitest::Test
     it 'generates TeX source and gives access to file directly' do
       @author = 'Foo'
       data_read = nil
-      invocation_result = document(:first, :tex => true).to_pdf(binding) do |filename|
+      invocation_result = document(:first, tex: true).to_pdf(binding) do |filename|
         data_read = File.open(filename, 'rb:UTF-8', &:read)
         return :not_the_file_contents
       end

@@ -6,11 +6,11 @@ class PdfTest < Minitest::Test
 
     before do
       @options = {
-        :locals => {
-        :number => 234,
-        :string => 'hello',
-        :hash => { :dog => :cat },
-        :array => ['marshmallow', 'candy']
+        locals: {
+        number: 234,
+        string: 'hello',
+        hash: { dog: :cat },
+        array: ['marshmallow', 'candy']
       }
       }
     end

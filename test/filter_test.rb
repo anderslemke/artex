@@ -5,7 +5,7 @@ class FilterTest < Minitest::Test
   describe 'Filtering Documents' do
 
     it 'filters through Textile' do
-      doc = document('text.textile', :filter => 'textile')
+      doc = document('text.textile', filter: 'textile')
       source = doc.source(binding)
       assert source.include?('\item')
     end

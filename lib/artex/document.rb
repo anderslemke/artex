@@ -22,13 +22,13 @@ module ArTeX
     # [+:tmpdir+] Location of temporary directory (default: +Dir.tmpdir+)
     def self.options
       @options ||= {
-        :preprocessor => 'xelatex',
-        :preprocess => false,
-        :processor => 'xelatex',
+        preprocessor: 'xelatex',
+        preprocess: false,
+        processor: 'xelatex',
         #
-        :shell_redirect => nil,
+        shell_redirect: nil,
         # Temporary Directory
-        :tempdir => Dir.tmpdir
+        tempdir: Dir.tmpdir
       }
     end
 
