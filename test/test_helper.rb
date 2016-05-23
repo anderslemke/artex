@@ -19,7 +19,7 @@ class Minitest::Test
   end
 
   def document(name, options = {})
-    name = name.kind_of?(Symbol) ? "#{name}.tex.erb" : name
+    name = name.is_a?(Symbol) ? "#{name}.tex.erb" : name
     template = File.read(File.dirname(__FILE__) << "/fixtures/#{name}")
     ArTeX::Document.new(template, options)
   end
