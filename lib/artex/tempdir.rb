@@ -33,7 +33,9 @@ module ArTeX
     end
 
     #######
+
     private
+
     #######
 
     # Try using uuidgen, but if that doesn't work drop down to

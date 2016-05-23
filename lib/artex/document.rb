@@ -88,7 +88,9 @@ module ArTeX
     end
 
     #######
+
     private
+
     #######
 
     # Verify existence of executable in search path
