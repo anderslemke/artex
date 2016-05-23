@@ -4,7 +4,7 @@ module ArTeX
 
   class Tempdir #:nodoc:
 
-    def self.open(parent_path=ArTeX::Document.options[:tempdir])
+    def self.open(parent_path = ArTeX::Document.options[:tempdir])
       tempdir = new(parent_path)
       FileUtils.mkdir_p tempdir.path
      # result = Dir.chdir(tempdir.path) do
@@ -16,7 +16,7 @@ module ArTeX
      # result
     end
 
-    def initialize(parent_path, basename='artex')
+    def initialize(parent_path, basename = 'artex')
       @parent_path = parent_path
       @basename = basename
       @removed = false

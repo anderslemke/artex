@@ -32,7 +32,7 @@ module ArTeX
       }
     end
 
-    def initialize(content, options={})
+    def initialize(content, options = {})
       @options = self.class.options.merge(options)
       if @options[:processed]
         @source = content
@@ -42,7 +42,7 @@ module ArTeX
     end
 
     # Get the source for the entire
-    def source(binding=nil) #:nodoc:
+    def source(binding = nil) #:nodoc:
       @source ||= wrap_in_layout(binding) do
         filter @erb.result(binding)
       end
@@ -59,7 +59,7 @@ module ArTeX
     end
 
     # Wrap content in optional layout
-    def wrap_in_layout(binding=nil) #:nodoc:
+    def wrap_in_layout(binding = nil) #:nodoc:
       if @options[:layout]
         ERB.new(@options[:layout]).result(binding)
       else
@@ -71,7 +71,7 @@ module ArTeX
     # call-seq:
     #   to_pdf # => PDF in a String
     #   to_pdf { |filename| ... }
-    def to_pdf(binding=nil, &file_handler)
+    def to_pdf(binding = nil, &file_handler)
       process_pdf_from(source(binding), &file_handler)
     end
 

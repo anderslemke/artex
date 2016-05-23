@@ -18,7 +18,7 @@ class Minitest::Test
     flexmock(Dir).should_receive(:tmpdir).and_return(File.dirname(__FILE__) << '/tmp')
   end
 
-  def document(name, options={})
+  def document(name, options = {})
     name = name.kind_of?(Symbol) ? "#{name}.tex.erb" : name
     template = File.read(File.dirname(__FILE__) << "/fixtures/#{name}")
     ArTeX::Document.new(template, options)
