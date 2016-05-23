@@ -21,7 +21,7 @@ class TempdirTest < Minitest::Test
 
     it "uses a 'artex' name prefix" do
       ArTeX::Tempdir.open do |tempdir|
-        assert_equal 'artex', File.basename(tempdir.path)[0,5]
+        assert_equal 'artex', File.basename(tempdir.path)[0, 5]
       end
     end
 
