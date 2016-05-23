@@ -2,17 +2,17 @@ require File.dirname(__FILE__) << '/test_helper'
 
 class DocumentTest < Minitest::Test
 
-  describe "Document Generation" do
+  describe 'Document Generation' do
 
     before do
       change_tmpdir_for_testing
     end
 
-    it "has a to_pdf() method" do
+    it 'has a to_pdf() method' do
       assert document(:first).respond_to?(:to_pdf)
     end
 
-    describe "when escaping" do
+    describe 'when escaping' do
       before do
         @obj = Object.new
         def @obj.to_s
@@ -20,15 +20,15 @@ class DocumentTest < Minitest::Test
         end
         @escaped = '\textbackslash{}\textasciitilde{}'
       end
-      it "escapes character" do
+      it 'escapes character' do
         assert_equal @escaped, ArTeX::Document.escape(@obj.to_s)
       end
-      it "converts argument to string before attempting escape" do
+      it 'converts argument to string before attempting escape' do
         assert_equal @escaped, ArTeX::Document.escape(@obj)
       end
     end
 
-    it "uses a to_pdf() block to move a file to a relative path" do
+    it 'uses a to_pdf() block to move a file to a relative path' do
       begin
         path = File.expand_path(File.dirname(__FILE__) << '/tmp/this_is_relative_to_pwd.pdf')
         document(:first).to_pdf do |filename|
@@ -40,17 +40,17 @@ class DocumentTest < Minitest::Test
       end
     end
 
-    it "generates PDF and returns it as a string" do
+    it 'generates PDF and returns it as a string' do
       @author = 'Foo'
       assert_equal '%PDF', document(:first).to_pdf(binding)[0, 4]
     end
 
-    it "generates TeX source and returns it as a string with debug option" do
+    it 'generates TeX source and returns it as a string with debug option' do
       @author = 'Foo'
       refute_equal '%PDF', document(:first, :tex => true).to_pdf(binding)[0, 4]
     end
 
-    it "generates PDF and gives access to file directly" do
+    it 'generates PDF and gives access to file directly' do
       @author = 'Foo'
       data_read = nil
       invocation_result = document(:first).to_pdf(binding) do |filename|
@@ -61,7 +61,7 @@ class DocumentTest < Minitest::Test
       assert_equal :not_the_file_contents, invocation_result
     end
 
-    it "generates TeX source and gives access to file directly" do
+    it 'generates TeX source and gives access to file directly' do
       @author = 'Foo'
       data_read = nil
       invocation_result = document(:first, :tex => true).to_pdf(binding) do |filename|

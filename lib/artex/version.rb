@@ -50,7 +50,7 @@ module ArTeX
     # Converts this version object to a string, where each of the three
     # version components are joined by the '.' character. E.g., 2.0.0.
     def to_s
-      @to_s ||= [@major, @minor, @tiny].join(".")
+      @to_s ||= [@major, @minor, @tiny].join('.')
     end
 
     # Converts this version to a canonical integer that may be compared

@@ -10,7 +10,7 @@ Echoe.new 'artex' do
 end
 
 task :coverage do
-  system "open coverage/index.html" if PLATFORM['darwin']
+  system 'open coverage/index.html' if PLATFORM['darwin']
 end
 
 task default: :test

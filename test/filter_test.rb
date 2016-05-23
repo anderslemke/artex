@@ -2,9 +2,9 @@ require File.dirname(__FILE__) << '/test_helper'
 
 class FilterTest < Minitest::Test
 
-  describe "Filtering Documents" do
+  describe 'Filtering Documents' do
 
-    it "filters through Textile" do
+    it 'filters through Textile' do
       doc = document('text.textile', :filter => 'textile')
       source = doc.source(binding)
       assert source.include?('\item')

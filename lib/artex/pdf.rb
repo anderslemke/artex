@@ -11,7 +11,7 @@ module ArTeX
     #   render :partial => "layouts/brandings/#{@bill.branding.template_name}"
     #   render :partial => 'bills/form/billing_position/_billing_position.pdf.rtex', :collection => @bill.billing_positions
     def render(options = {})
-      content = ""
+      content = ''
 
       # Relativer Pfad zum Template
       # z.B. 'bills/form/billing_position/_billing_position.pdf.rtex'
@@ -32,7 +32,7 @@ module ArTeX
     end
 
     def render_collection(collection, binding, template_name)
-      content = ""
+      content = ''
 
       #TODO refactor
       collection.each do |billing_position|
@@ -48,8 +48,8 @@ module ArTeX
       parts = partial_name.split(/\//)
 
       # "_" vor das letzte Element setzen.
-      parts[-1] = "_" + parts.last
-      template_name = parts.join("/")
+      parts[-1] = '_' + parts.last
+      template_name = parts.join('/')
       template_name
     end
 
@@ -73,7 +73,7 @@ module ArTeX
 
     # Nimmt Latex und schreibt ein PDF. Gibt den Pfad zum PDF zurück.
       def latex_to_pdf(latex_content)
-        pdf_file = ""
+        pdf_file = ''
         ::ArTeX::Document.new(latex_content, :process => true ).to_pdf do |filename|
           pdf_file = Tempfile.new('artex-pdf')
           FileUtils.mv filename, pdf_file.path
@@ -82,7 +82,7 @@ module ArTeX
       end
 
     def get_template_path(path)
-      raise "unimplemented"
+      raise 'unimplemented'
     end
 
     def l(*args)
