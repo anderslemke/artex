@@ -10,7 +10,7 @@ class PdfTest < Minitest::Test
         number: 234,
         string: 'hello',
         hash: { dog: :cat },
-        array: ['marshmallow', 'candy']
+        array: %w(marshmallow candy)
       }
       }
     end
