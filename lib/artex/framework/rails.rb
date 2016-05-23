@@ -30,7 +30,7 @@ module ArTeX
 
         def compile(template)
           erb = "<% __in_erb_template=true %>#{template.source}"
-          return <<-EORUBY
+          <<-EORUBY
             source = #{self.class.erb_implementation.new(erb, :trim => (self.class.erb_trim_mode == '-')).src}
             if content_for?(:layout) # (inner) already rendered
               ::ArTeX::Document.new(content_for(:layout), (@latex_options || {}).merge(layout: source)).to_pdf(binding)

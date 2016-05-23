@@ -24,7 +24,7 @@ module ArTeX
                 else
         render_to_latex(binding, template_name)
                 end
-      return content
+      content
     end
 
     def is_collection?(options)
@@ -40,7 +40,7 @@ module ArTeX
           latex = render_to_latex(binding, template_name)
           content += latex
       end
-      return content
+      content
     end
 
     # 'bills/form/billing_position/_billing_position.pdf.rtex' -> 'bills/form/billing_position/_billing_position.pdf.rtex'
@@ -68,7 +68,7 @@ module ArTeX
       template = File.read(template_path)
 
       latex_code = ERB.new(template).result(binding)
-      return latex_code
+      latex_code
     end
 
     # Nimmt Latex und schreibt ein PDF. Gibt den Pfad zum PDF zurück.
@@ -78,7 +78,7 @@ module ArTeX
           pdf_file = Tempfile.new('artex-pdf')
           FileUtils.mv filename, pdf_file.path
         end
-        return pdf_file.path
+        pdf_file.path
       end
 
     def get_template_path(path)
@@ -86,7 +86,7 @@ module ArTeX
     end
 
     def l(*args)
-      return ArTeX::Document.escape(*args)
+      ArTeX::Document.escape(*args)
     end
   end
 end
