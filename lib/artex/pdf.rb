@@ -1,4 +1,4 @@
-#TODO Translate comments.
+# TODO Translate comments.
 module ArTeX
   class PDF
     # Wir bilden das Verhalten von render :partial nach.
@@ -34,7 +34,7 @@ module ArTeX
     def render_collection(collection, binding, template_name)
       content = ''
 
-      #TODO refactor
+      # TODO refactor
       collection.each do |billing_position|
           @billing_position = billing_position
           latex = render_to_latex(binding, template_name)
