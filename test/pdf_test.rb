@@ -10,7 +10,7 @@ class PdfTest < Minitest::Test
         :locals => {
         :number => 234,
         :string => "hello",
-        :hash => {:dog => :cat},
+        :hash => { :dog => :cat },
         :array => ["marshmallow", "candy"]
       }
       }
