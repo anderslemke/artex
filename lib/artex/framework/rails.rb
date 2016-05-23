@@ -14,7 +14,7 @@ module ArTeX
           raw ArTeX::Document.escape(*args)
         end
 
-        alias_method :lesc, :latex_escape
+        alias lesc latex_escape
       end
 
       # action-specific options can be passed from the view by setting
