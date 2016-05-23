@@ -58,7 +58,7 @@ module ArTeX
       return unless options[:locals]
       options[:locals].each do |name, value|
         l = lambda { return value }
-        self.class.send(:define_method, name.to_sym, l )
+        self.class.send(:define_method, name.to_sym, l)
 
       end
     end
@@ -74,7 +74,7 @@ module ArTeX
     # Nimmt Latex und schreibt ein PDF. Gibt den Pfad zum PDF zurück.
       def latex_to_pdf(latex_content)
         pdf_file = ''
-        ::ArTeX::Document.new(latex_content, :process => true ).to_pdf do |filename|
+        ::ArTeX::Document.new(latex_content, :process => true).to_pdf do |filename|
           pdf_file = Tempfile.new('artex-pdf')
           FileUtils.mv filename, pdf_file.path
         end
