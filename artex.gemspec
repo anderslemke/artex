@@ -20,10 +20,10 @@ Gem::Specification.new do |s|
   s.test_files = ['test/tempdir_test.rb', 'test/test_helper.rb', 'test/filter_test.rb', 'test/document_test.rb', 'test/pdf_test.rb']
   s.license = 'MIT'
 
-  if s.respond_to? :specification_version then
+  if s.respond_to? :specification_version
     s.specification_version = 4
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0')
       s.add_development_dependency('rails', ['~> 4.2.0'])
     else
       s.add_dependency('rails', ['~> 4.2.0'])

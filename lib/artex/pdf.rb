@@ -19,7 +19,7 @@ module ArTeX
 
       handle_locals(options)
 
-      content = if is_collection?(options) then
+      content = if is_collection?(options)
         render_collection(options[:collection], binding, template_name)
                 else
         render_to_latex(binding, template_name)
