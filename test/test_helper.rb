@@ -9,7 +9,6 @@ Minitest::Reporters.use!
 require 'codeclimate-test-reporter'
 CodeClimate::TestReporter.start
 
-
 require File.dirname(__FILE__) << '/../lib/artex'
 
 class Minitest::Test

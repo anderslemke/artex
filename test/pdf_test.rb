@@ -1,6 +1,5 @@
 require File.dirname(__FILE__) << '/test_helper'
 
-
 class PdfTest < Minitest::Test
 
   describe 'Creating a temporary directory' do

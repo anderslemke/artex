@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gemspec
 
-
 # Collects test coverage data from your Ruby test suite and sends it to Code Climate's hosted, automated code review service. Based on SimpleCov
 gem 'codeclimate-test-reporter', group: :test, require: false
 # HACK `rake test` doesn't work without it
