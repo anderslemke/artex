@@ -41,7 +41,7 @@ module ArTeX
           EORUBY
         end
       end
-      
+
     end
   end
 end

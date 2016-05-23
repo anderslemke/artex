@@ -1,7 +1,6 @@
 #TODO Translate comments.
 module ArTeX
-  class PDF  
-    
+  class PDF
     # Wir bilden das Verhalten von render :partial nach.
     # So wird die Abhängigkeit zu ActionView aufgelöst.
     # Dabei gehen sicherlich Möglichkeiten verloren, die hier aber auch nicht benötigt werden.
@@ -29,16 +28,16 @@ module ArTeX
     end
 
     def is_collection?(options)
-      options[:collection] && options[:collection].is_a?(Array)    
+      options[:collection] && options[:collection].is_a?(Array)
     end
 
     def render_collection(collection, binding, template_name)
       content = ""
-      
+
       #TODO refactor
-      collection.each do |billing_position|      
+      collection.each do |billing_position|
           @billing_position = billing_position
-          latex = render_to_latex(binding, template_name)        
+          latex = render_to_latex(binding, template_name)
           content += latex
       end
       return content
@@ -81,13 +80,13 @@ module ArTeX
         end
         return pdf_file.path
       end
-    
+
     def get_template_path(path)
       raise "unimplemented"
     end
-    
+
     def l(*args)
       return ArTeX::Document.escape(*args)
     end
-  end  
+  end
 end

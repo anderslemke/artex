@@ -1,14 +1,12 @@
 module ArTeX
-  
   module Escaping
-    
     # Escape text using +replacements+
     def escape(text)
       replacements.inject(text.to_s) do |corpus, (pattern, replacement)|
         corpus.gsub(pattern, replacement)
       end
     end
-    
+
     # List of replacements
     def replacements
       @replacements ||= [
@@ -22,7 +20,5 @@ module ArTeX
         [/([_$&%#])/, '\\\\\1']
       ]
     end
-    
   end
-  
 end
