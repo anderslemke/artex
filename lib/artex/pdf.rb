@@ -57,7 +57,7 @@ module ArTeX
     def handle_locals(options = {})
       return unless options[:locals]
       options[:locals].each do |name, value|
-        l = lambda { return value }
+        l = -> { return value }
         self.class.send(:define_method, name.to_sym, l)
 
       end
