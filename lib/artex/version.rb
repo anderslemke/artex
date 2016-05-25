@@ -63,8 +63,8 @@ module ArTeX
     end
 
     MAJOR = 2
-    MINOR = 1
-    TINY  = 5
+    MINOR = 2
+    TINY  = 0
 
     # The current version as a Version instance
     CURRENT = new(MAJOR, MINOR, TINY)
