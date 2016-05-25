@@ -16,6 +16,8 @@ module ArTeX
     class ExecutableNotFoundError < ::StandardError; end
 
     # Default options
+    # [+:postprocess+] Are we postprocessing? Default is +false+
+    # [+:postprocessor+] Executable to use during postprocessing (generating TOCs, etc). Default is +xelatex+
     # [+:preprocess+] Are we preprocessing? Default is +false+
     # [+:preprocessor+] Executable to use during preprocessing (generating TOCs, etc). Default is +xelatex+
     # [+:shell_redirect+] Option redirection for shell output (eg, +"> /dev/null 2>&1"+ ). Default is +nil+.
@@ -24,6 +26,8 @@ module ArTeX
       @options ||= {
         biber_process: false,
         biber_processor: 'biber',
+        postprocess: false,
+        postprocessor: 'xelatex',
         preprocessor: 'xelatex',
         preprocess: false,
         processor: 'xelatex',
@@ -81,6 +85,10 @@ module ArTeX
       @biber_processor ||= check_path_for @options[:biber_processor]
     end
 
+    def postprocessor #:nodoc:
+      @postprocessor ||= check_path_for @options[:postprocessor]
+    end
+
     def processor #:nodoc:
       @processor ||= check_path_for @options[:processor]
     end
@@ -115,6 +123,7 @@ module ArTeX
           preprocess!(tempdir.path) if preprocessing?
           biber_process!(tempdir.path) if biber_processing?
           process!(tempdir.path)
+          postprocess!(tempdir.path) if postprocessing?
           verify!(tempdir.path)
         end
         if file_handler
@@ -128,6 +137,12 @@ module ArTeX
     def biber_process!(directory)
       unless `#{biber_processor} --output-directory='#{directory}' document #{@options[:shell_redirect]}`
         raise GenerationError, "Could not biber_process using #{biber_processor}"
+      end
+    end
+
+    def postprocess!(directory)
+      unless `#{postprocessor} --interaction=nonstopmode -output-directory='#{directory}' '#{File.join(directory, source_file)}' #{@options[:shell_redirect]}`
+        raise GenerationError, "Could not postprocess using #{postprocessor}"
       end
     end
 
@@ -145,6 +160,10 @@ module ArTeX
 
     def biber_processing?
       @options[:biber_process]
+    end
+
+    def postprocessing?
+      @options[:postprocess]
     end
 
     def preprocessing?
