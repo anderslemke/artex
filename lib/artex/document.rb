@@ -153,7 +153,7 @@ module ArTeX
     end
 
     def preprocess!(directory)
-      unless `#{preprocessor} --interaction=nonstopmode -output-directory='#{directory}' '#{File.join(directory, source_file)}' #{@options[:shell_redirect]}`
+      unless `#{preprocessor} --interaction=nonstopmode -no-pdf -output-directory='#{directory}' '#{File.join(directory, source_file)}' #{@options[:shell_redirect]}`
         raise GenerationError, "Could not preprocess using #{preprocessor}"
       end
     end
