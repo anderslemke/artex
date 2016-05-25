@@ -22,6 +22,8 @@ module ArTeX
     # [+:tmpdir+] Location of temporary directory (default: +Dir.tmpdir+)
     def self.options
       @options ||= {
+        biber_process: false,
+        biber_processor: 'biber',
         preprocessor: 'xelatex',
         preprocess: false,
         processor: 'xelatex',
@@ -75,6 +77,10 @@ module ArTeX
       process_pdf_from(source(binding), &file_handler)
     end
 
+    def biber_processor #:nodoc:
+      @biber_processor ||= check_path_for @options[:biber_processor]
+    end
+
     def processor #:nodoc:
       @processor ||= check_path_for @options[:processor]
     end
@@ -107,6 +113,7 @@ module ArTeX
         prepare(tempdir.path, input)
         if generating?
           preprocess!(tempdir.path) if preprocessing?
+          biber_process!(tempdir.path) if biber_processing?
           process!(tempdir.path)
           verify!(tempdir.path)
         end
@@ -115,6 +122,12 @@ module ArTeX
         else
           return result_as_string(tempdir.path)
         end
+      end
+    end
+
+    def biber_process!(directory)
+      unless `#{biber_processor} --output-directory='#{directory}' document #{@options[:shell_redirect]}`
+        raise GenerationError, "Could not biber_process using #{biber_processor}"
       end
     end
 
@@ -128,6 +141,10 @@ module ArTeX
       unless `#{preprocessor} --interaction=nonstopmode -output-directory='#{directory}' '#{File.join(directory, source_file)}' #{@options[:shell_redirect]}`
         raise GenerationError, "Could not preprocess using #{preprocessor}"
       end
+    end
+
+    def biber_processing?
+      @options[:biber_process]
     end
 
     def preprocessing?
