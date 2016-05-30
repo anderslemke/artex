@@ -147,7 +147,7 @@ module ArTeX
     end
 
     def process!(directory)
-      unless `#{processor} --interaction=nonstopmode -output-directory='#{directory}' '#{File.join(directory, source_file)}' #{@options[:shell_redirect]}`
+      unless `#{processor} --interaction=nonstopmode #{'-no-pdf' if postprocessing?} -output-directory='#{directory}' '#{File.join(directory, source_file)}' #{@options[:shell_redirect]}`
         raise GenerationError, "Could not generate PDF using #{processor}"
       end
     end
