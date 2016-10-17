@@ -1,0 +1,60 @@
+.lint: &lint
+  before_script:
+    - cat /etc/os-release
+    - uname -a
+    - ruby --version
+    - gem --version
+    - bundle --version
+    - apk add --no-cache --update git
+    - bundle install --clean --deployment --jobs=2 --without default development production test
+  image: ruby:alpine
+  stage: lint
+
+.test: &test
+  before_script:
+    - cat /etc/os-release
+    - uname -a
+    - ruby --version
+    - gem --version
+    - bundle --version
+    - apt-get -qq update
+    - apt-get -qq install git texlive-xetex uuid-runtime
+  script:
+    - bundle install --clean --deployment --jobs=$(nproc) --without development lint production
+    - bin/rake
+  stage: test
+
+cache:
+  paths:
+    - vendor/bundle
+
+lint:rubocop:
+  <<: *lint
+  script:
+    - bin/rubocop
+
+stages:
+  - lint
+  - test
+
+test:jruby:9.1:
+  allow_failure: true
+  image: jruby:9.1
+  <<: *test
+
+test:mri:2.1:
+  image: ruby:2.1
+  <<: *test
+
+test:mri:2.2:
+  image: ruby:2.2
+  <<: *test
+
+test:mri:2.3:
+  image: ruby:2.3
+  <<: *test
+
+variables:
+  JRUBY_OPTS: --debug
+  LC_ALL: C.UTF-8
+  RAILS_ENV: test

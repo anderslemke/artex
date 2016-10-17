@@ -3,9 +3,10 @@ directory would not change within one ruby process. This doesn't work well in mu
 environments. Now absolute paths are used instead of assuming the current working
 directory is for one PDF generation.
 
-{<img src="https://travis-ci.org/korobkov/artex.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/korobkov/artex]
-{<img src="https://codeclimate.com/github/korobkov/artex/badges/gpa.svg" />}[https://codeclimate.com/github/korobkov/artex]
+{<img src="https://gitlab.com/korobkov/artex/badges/master/build.svg" alt="Build status" />}[https://gitlab.com/korobkov/artex/pipelines]
+{<img src="https://gitlab.com/korobkov/artex/badges/master/coverage.svg" alt="Coverage report" />}[https://gitlab.com/korobkov/artex/commits/master]
 {<img src="https://codeclimate.com/github/korobkov/artex/badges/coverage.svg" />}[https://codeclimate.com/github/korobkov/artex/coverage]
+{<img src="https://codeclimate.com/github/korobkov/artex/badges/gpa.svg" />}[https://codeclimate.com/github/korobkov/artex]
 {<img src="https://gemnasium.com/korobkov/artex.svg" alt="Dependency Status" />}[https://gemnasium.com/korobkov/artex]
 {<img src="https://inch-ci.org/github/korobkov/artex.svg?branch=master" alt="Inline docs" />}[https://inch-ci.org/github/korobkov/artex]
 {<img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT" />}[https://opensource.org/licenses/MIT]
@@ -13,9 +14,9 @@ directory is for one PDF generation.
 
 = ArTeX: TeX/PDF Generation for Ruby
 
-Project homepage (FAQ, manual, documentation, contact info): http://github.com/avarteqgmbh/artex
+Project homepage (FAQ, manual, documentation, contact info): https://github.com/avarteqgmbh/artex
 
-Source repository at: http://gitlab.com/korobkov/artex
+Source repository at: https://gitlab.com/korobkov/artex
 
 == Dependencies
 
@@ -38,3 +39,8 @@ In contrast to that ArTeX has no dependencies on ActionPack and thus can also be
 
 We'll keep on updating the gem and we'll try to provide some examples in the future.
 Besides of that the code will be iteratively cut down, rewritten and enhanced.
+
+== Requirements (tested)
+
+* OS: {GNU/Linux}[https://www.gnu.org/]
+* Language: {MRI 2.3}[https://www.ruby-lang.org/en/] || {JRuby 9.1}[http://jruby.org/] on {OpenJDK 8}[http://openjdk.java.net/]
