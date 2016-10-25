@@ -13,6 +13,8 @@ group :development do
 end
 
 group :development, :lint do
+  # Patch-level verification for Bundler
+  gem 'bundler-audit', require: false
   # A Ruby static code analyzer. Aims to enforce the community-driven Ruby Style Guide
   gem 'rubocop', require: false
   # RSpec-specific analysis for your projects, as an extension to RuboCop
