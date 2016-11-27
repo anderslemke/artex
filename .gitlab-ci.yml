@@ -9,6 +9,8 @@
     - bundle install --clean --deployment --jobs=2 --without default development production test
   image: ruby:alpine
   stage: lint
+  tags:
+    - 2gb
 
 .test: &test
   before_script:
@@ -23,6 +25,8 @@
     - bundle install --clean --deployment --jobs=$(nproc) --without development lint production
     - bin/rake
   stage: test
+  tags:
+    - 2gb
 
 cache:
   paths:
