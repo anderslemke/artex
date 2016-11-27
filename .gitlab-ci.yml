@@ -13,6 +13,15 @@
     - 2gb
 
 .test: &test
+  script:
+    - bundle install --clean --deployment --jobs=$(nproc) --without development lint production
+    - bin/rake
+  stage: test
+  tags:
+    - 2gb
+
+.use_jruby: &use_jruby
+  <<: *test
   before_script:
     - cat /etc/os-release
     - uname -a
@@ -21,12 +30,18 @@
     - bundle --version
     - apt-get -qq update
     - apt-get -qq install git texlive-xetex uuid-runtime
-  script:
-    - bundle install --clean --deployment --jobs=$(nproc) --without development lint production
-    - bin/rake
-  stage: test
-  tags:
-    - 2gb
+  image: jruby:9.1
+
+.use_mri: &use_mri
+  <<: *test
+  before_script:
+    - cat /etc/os-release
+    - uname -a
+    - ruby --version
+    - gem --version
+    - bundle --version
+    - apt-get -qq update
+    - apt-get -qq install texlive-xetex uuid-runtime
 
 cache:
   paths:
@@ -47,21 +62,20 @@ stages:
   - test
 
 test:jruby:9.1:
+  <<: *use_jruby
   allow_failure: true
-  image: jruby:9.1
-  <<: *test
 
 test:mri:2.1:
+  <<: *use_mri
   image: ruby:2.1
-  <<: *test
 
 test:mri:2.2:
+  <<: *use_mri
   image: ruby:2.2
-  <<: *test
 
 test:mri:2.3:
+  <<: *use_mri
   image: ruby:2.3
-  <<: *test
 
 variables:
   JRUBY_OPTS: --debug
