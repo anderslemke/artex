@@ -2,6 +2,11 @@ source 'https://rubygems.org'
 
 gemspec
 
+group :deployment do
+  # Posts SimpleCov test coverage data from your Ruby test suite to Code Climate's hosted, automated code review service.
+  gem 'codeclimate-test-reporter', require: false
+end
+
 group :development do
   # Byebug is a simple to use, feature rich debugger for Ruby 2
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -29,9 +34,6 @@ group :development, :test do
 end
 
 group :test do
-  # Collects test coverage data from your Ruby test suite and sends it to Code Climate's hosted, automated code review service.
-  # Based on SimpleCov
-  gem 'codeclimate-test-reporter', require: false
   # HACK `rake test` doesn't work without it
   # A Rubygems packaging tool that provides Rake tasks for documentation, extension compiling, testing, and deployment
   gem 'echoe', require: false
@@ -43,4 +45,6 @@ group :test do
   gem 'minitest-reporters', require: false
   # A RSpec testing framework for Rails
   gem 'rspec-rails', require: false
+  # Code coverage for Ruby 1.9+ with a powerful configuration library and automatic merging of coverage across test suites
+  gem 'simplecov', require: false
 end
