@@ -26,7 +26,7 @@ group :development, :lint do
   gem 'rubocop-rspec', require: false
 end
 
-group :development, :test do
+group :development, :lint, :test do
   # Provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed
   gem 'bundler'
   # A make-like build utility for Ruby
