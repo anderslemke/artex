@@ -5,7 +5,6 @@ directory is for one PDF generation.
 
 {<img src="https://gitlab.com/korobkov/artex/badges/master/build.svg" alt="Build status" />}[https://gitlab.com/korobkov/artex/pipelines]
 {<img src="https://gitlab.com/korobkov/artex/badges/master/coverage.svg" alt="Coverage report" />}[https://korobkov.gitlab.io/artex/coverage]
-{<img src="https://codeclimate.com/github/korobkov/artex/badges/coverage.svg" />}[https://codeclimate.com/github/korobkov/artex/coverage]
 {<img src="https://codeclimate.com/github/korobkov/artex/badges/gpa.svg" />}[https://codeclimate.com/github/korobkov/artex]
 {<img src="https://gemnasium.com/korobkov/artex.svg" alt="Dependency Status" />}[https://gemnasium.com/korobkov/artex]
 {<img src="https://inch-ci.org/github/korobkov/artex.svg?branch=master" alt="Inline docs" />}[https://inch-ci.org/github/korobkov/artex]
