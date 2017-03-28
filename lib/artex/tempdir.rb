@@ -12,8 +12,10 @@ module ArTeX
      # end
       # We don't remove the temporary directory when exceptions occur,
       # so that the source of the exception can be dubbed (logfile kept)
-      tempdir.remove!
+      
      # result
+    ensure
+      tempdir.remove!
     end
 
     def initialize(parent_path, basename = 'artex')
