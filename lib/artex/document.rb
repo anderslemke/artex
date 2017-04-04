@@ -17,9 +17,9 @@ module ArTeX
 
     # Default options
     # [+:postprocess+] Are we postprocessing? Default is +false+
-    # [+:postprocessor+] Executable to use during postprocessing (generating TOCs, etc). Default is +xelatex+
+    # [+:postprocessor+] Executable to use during postprocessing (generating TOCs, etc). Default is +pdflatex+
     # [+:preprocess+] Are we preprocessing? Default is +false+
-    # [+:preprocessor+] Executable to use during preprocessing (generating TOCs, etc). Default is +xelatex+
+    # [+:preprocessor+] Executable to use during preprocessing (generating TOCs, etc). Default is +pdflatex+
     # [+:shell_redirect+] Option redirection for shell output (eg, +"> /dev/null 2>&1"+ ). Default is +nil+.
     # [+:tmpdir+] Location of temporary directory (default: +Dir.tmpdir+)
     def self.options
@@ -27,10 +27,10 @@ module ArTeX
         biber_process: false,
         biber_processor: 'biber',
         postprocess: false,
-        postprocessor: 'xelatex',
-        preprocessor: 'xelatex',
+        postprocessor: 'pdflatex',
+        preprocessor: 'pdflatex',
         preprocess: false,
-        processor: 'xelatex',
+        processor: 'pdflatex',
         #
         shell_redirect: nil,
         # Temporary Directory
