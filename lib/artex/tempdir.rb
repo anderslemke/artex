@@ -44,11 +44,7 @@ module ArTeX
     # a poor-man's UUID; timestamp, thread & object hashes
     # Note: I don't want to add any dependencies (so no UUID library)
     def uuid
-      if (result = `uuidgen`.strip rescue nil).nil? || result.empty?
-        "#{Time.now.to_i}-#{Thread.current.hash}-#{hash}"
-      else
-        result
-      end
+      SecureRandom.uuid
     end
 
   end
